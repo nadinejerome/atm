@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>ATM by nadinejerome</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">ATM</h1>
+        <p class="header">Simple C++ ATM Machine</p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/nadinejerome/atm/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/nadinejerome/atm/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/nadinejerome/atm">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/nadinejerome">nadinejerome</a></p>
+
+
+      </header>
+      <section>
+        <h1>
+<a name="simple-atm-machine" class="anchor" href="#simple-atm-machine"><span class="octicon octicon-link"></span></a>SIMPLE ATM MACHINE</h1>
+
+<p><em>Nadine E. Jerome</em></p>
+
+<p>This simple ATM machine code is a basic, C++ program. I wrote this in college, and I recommend this program to anyone who wants to learn C++, or any introduction to object oriented programming.</p>
+
+<p>**PURPOSE:    **<br>
+Write a program that simulates as an atm machine</p>
+
+<p>**TASKS:   **<br>
+1. Create an account that has the ability to 
+1. Check checking account balance
+1. Check savings account balance
+1. Make transfers between each account
+1. Make deposits into accounts
+1. Make withdrawals from accounts</p>
+
+<p>**INSTRUCTIONS:   **     </p>
+
+<ul>
+<li>Enter pin number '1234'</li>
+<li>Checkings Account Balance = 100</li>
+<li>Savings Account Balance = 600</li>
+</ul><h2>
+<a name="example" class="anchor" href="#example"><span class="octicon octicon-link"></span></a>Example:</h2>
+
+<pre><code>int getTransfer() {
+   int AmountTransfer;
+   int TransferTo = this-&gt;type== 1 ? 2 : 1;
+
+   cout &lt;&lt; "Enter amount to transfer to your "&lt;&lt; AccountType[TransferTo] &lt;&lt; " account."&lt;&lt; endl;
+   cin &gt;&gt;  AmountTransfer;
+
+   if(AmountTransfer &lt;= AccountDetails[this-&gt;type]) {
+      // update the current account balance in the selected account
+      int NewBalance = this-&gt;balance -= AmountTransfer;
+      AccountDetails[this-&gt;type] = NewBalance;
+
+      // Set the new transfered amount to transfered account
+      int TransferedAmount = AccountDetails[TransferTo] += AmountTransfer;
+      AccountDetails[TransferTo] = TransferedAmount;
+
+      cout &lt;&lt; "$" &lt;&lt; AmountTransfer &lt;&lt; " has been transfered to your "&lt;&lt; AccountType[TransferTo] &lt;&lt; " account." &lt;&lt; endl;
+       getBalance();
+
+   } else {
+       cout &lt;&lt; "Insuffient funds." &lt;&lt; endl;
+       getBalance();
+   }
+
+   return 0;
+}
+</code></pre>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
+  </body>
+</html>
